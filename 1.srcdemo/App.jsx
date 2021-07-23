@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
 import styled from 'styled-components'
-import Header from './components/Header'//一般组件
-import Home from './pages/Home'//路由组件
-import About from './pages/About'
+import Home from './components/Home'
+import About from './components/About'
 
+const Title = styled.div`
+height:50px;
+background-color:#lightgray;
+font-size:2rem;
+padding:30px;
+`;
 const NavList = styled.li`
 width:100px;
 height:30px;
@@ -33,7 +38,8 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Title>React Router Demo</Title>
+                <hr />
                 <Main>
                     <ul>
                         <NavList>
