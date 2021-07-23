@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Route } from 'react-router-dom'
+import { NavLink, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import Header from './components/Header'//一般组件
 import Home from './pages/Home'//路由组件
@@ -33,19 +33,21 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header />
                 <Main>
                     <ul>
                         <NavList>
-                            <Link to="/home">Home page</Link>
+                            <NavLink to="/home">Home page</NavLink>
                         </NavList>
                         <NavList>
-                            <Link to='/about'>About page</Link>
+                            <NavLink to='/about'>About page</NavLink>
                         </NavList>
                     </ul>
                     <Content>
-                        <Route path="/about" component={About} />
-                        <Route path="/home" component={Home} />
+                        <Switch>
+                            <Route path="/about" component={About} />
+                            <Route path="/home" component={Home} />
+                        </Switch>
                     </Content>
                 </Main>
             </div>
