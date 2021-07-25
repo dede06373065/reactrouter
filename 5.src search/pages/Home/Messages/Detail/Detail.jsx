@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import qs from 'querystring'
 const dataDetails = [
     {
         id: '1',
@@ -19,10 +19,13 @@ const dataDetails = [
 ]
 export default class Detail extends Component {
     render() {
-        const {id}=this.props.location.state
+        console.log(this.props)
+        const {search}=this.props.location
+        const {id}=qs.parse(search.slice(1))
         const findResult = dataDetails.find((findObj) => {
             return findObj.id === id
         })
+        console.log(this.props)
         return (
             <ul>
                 <li>{findResult.id}</li>
