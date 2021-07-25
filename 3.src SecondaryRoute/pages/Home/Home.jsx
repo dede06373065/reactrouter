@@ -20,7 +20,7 @@ export default class Home extends Component {
         return (
             <div>
                 <h2>Home‘s NavLists ...</h2>
-                <hr />
+                <br />
                 <Nav>
                     <NavLi>
                         <NavLink to="/home/news">NEWS</NavLink>
