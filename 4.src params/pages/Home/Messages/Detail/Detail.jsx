@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 const dataDetails = [
     {
         id: '1',
@@ -19,10 +18,12 @@ const dataDetails = [
 ]
 export default class Detail extends Component {
     render() {
-        const {id}=this.props.location.state
+        const { id } = this.props.match.params
         const findResult = dataDetails.find((findObj) => {
             return findObj.id === id
+
         })
+        console.log(this.props)
         return (
             <ul>
                 <li>{findResult.id}</li>

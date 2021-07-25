@@ -28,7 +28,7 @@ export default class Message extends Component {
                     messageArr.map((msgObj)=>{
                         return (
                             <li key={msgObj.id}>
-                                <Link to ={{pathname:'/home/messages/detail',state:{id:msgObj.id,title:msgObj.title}}} >{msgObj.title}</Link>
+                                <Link to ={`/home/messages/detail/?id=${msgObj.id}&${msgObj.title}`} >{msgObj.title}</Link>
                             </li>
                         )
                     })

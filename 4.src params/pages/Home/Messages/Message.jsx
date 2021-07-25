@@ -28,14 +28,14 @@ export default class Message extends Component {
                     messageArr.map((msgObj)=>{
                         return (
                             <li key={msgObj.id}>
-                                <Link to ={{pathname:'/home/messages/detail',state:{id:msgObj.id,title:msgObj.title}}} >{msgObj.title}</Link>
+                                <Link to ={`/home/messages/detail/${msgObj.id}/${msgObj.title}`} >{msgObj.title}</Link>
                             </li>
                         )
                     })
                     }
                 </ul>
                 <hr/>
-                <Route path="/home/messages/detail" component={Detail}/>
+                <Route path="/home/messages/detail/:id/:title" component={Detail}/>
             </div>
         )
     }
