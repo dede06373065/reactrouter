@@ -19,10 +19,10 @@ const dataDetails = [
 ]
 export default class Detail extends Component {
     render() {
-        const {id}=this.props.location.state
+        const {id}=this.props.location.state || {}
         const findResult = dataDetails.find((findObj) => {
             return findObj.id === id
-        })
+        })||{}
         return (
             <ul>
                 <li>{findResult.id}</li>
